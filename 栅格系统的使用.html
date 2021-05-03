@@ -1,38 +1,67 @@
-<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset='en'>
-        <script src='vue.js'></script>
-<!--[if lt IE 9]>
-<script src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js'></script>
-<script src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js'></script>
-<![endif]-->
-<link rel='stylesheet' href='bootstrap/css/bootstrap.min.css'>
-<title>栅格</title>
-
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">1</div>
-            <div class="col-lg-3">2</div>
-    <div class="col-lg-3">3</div>
-    <div class="col-lg-3">4</div>
-    </div>
-    <div class="row">
-        <div class="col-lg-6">1</div>
-        <div class="col-lg-2">2</div>
-        <div class="col-lg-2">3</div>
-        <div class="col-lg-2">4</div>
+        <head>
+                
+        <meta charset="en" />
+                
+        <script src="vue.js"></script>
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+        <title>栅格</title>
+        <style>
+            [class^="col"] {
+                border: 1px solid #ccc;
+            }
+            .container .row:nth-child(1){
+                background-color: pick;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4">1</div>
+                <div class="col-lg-3">2</div>
+                <div class="col-lg-3">3</div>
+                <div class="col-lg-3">4</div>
+            </div>
+        </br>
+            <!-- 如果孩子的份数相加等于12 则孩子能占满整个 的container的宽度  -->
+            <div class="row">
+                <div class="col-lg-6">1</div>
+                <div class="col-lg-2">2</div>
+                <div class="col-lg-2">3</div>
+                <div class="col-lg-2">4</div>
+            </div>
+        </br>
+            <!-- 如果孩子的份数相加小于12 则会? 则占不满整个container的宽度 会有空白  -->
+            <div class="row">
+                <div class="col-lg-6">1</div>
+                <div class="col-lg-2">2</div>
+                <div class="col-lg-2">3</div>
+                <div class="col-lg-1">4</div>
+            </div>
+        </br>
+            <!-- 如果孩子的份数相加大于12 则会? 多余的那一列 另起一行显示  -->
+            <div class="row">
+                <div class="col-lg-6">1</div>
+                <div class="col-lg-2">2</div>
+                <div class="col-lg-2">3</div>
+                <div class="col-lg-3">4</div>
+            </div>
         </div>
-</div>
-    <script>
-        var vm = new Vue({
-        el: '#app',
-        data: {},
-        methods: {},
-        computed: {},
-        })
-    </script>
-    </body>
+            
+        <script>
+            var vm = new Vue({
+                el: "#app",
+                data: {},
+                methods: {},
+                computed: {},
+            });
+        </script>
+            
+    </body>
 </html>
